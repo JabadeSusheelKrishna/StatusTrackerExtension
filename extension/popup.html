@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status Tracker</title>
+  <!-- Google Fonts import for Share Tech Mono for the developer/terminal typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <!-- View 1: First-time Onboarding/Registration View -->
+  <div id="onboarding-view" class="view-panel">
+    <div class="header-box">
+      <h1>STATUS . TRACKER</h1>
+      <p class="subtitle">v.0.1_ALPHA</p>
+    </div>
+    
+    <div class="content-box">
+      <div class="prompt-text">>_ IDENTIFY_YOURSELF</div>
+      
+      <div class="input-group">
+        <input type="text" id="username-input" placeholder=">_ ENTER_USERNAME" autocomplete="off" />
+      </div>
+      
+      <div class="input-group">
+        <input type="email" id="email-input" placeholder=">_ ENTER_EMAIL" autocomplete="off" />
+      </div>
+      
+      <button id="access-btn">ACCESS_DASHBOARD</button>
+    </div>
+    
+    <div id="onboarding-log" class="terminal-log">[SYS]: AWAITING_AUTHENTICATION</div>
+  </div>
+
+  <!-- View 2: Core Tracker Dashboard View -->
+  <div id="dashboard-view" class="view-panel" style="display: none;">
+    <!-- Static Header Box -->
+    <div class="header-box">
+      <h1>STATUS . TRACKER</h1>
+      <p class="subtitle">v.0.1_ALPHA</p>
+    </div>
+
+    <!-- Retro Tab Bar Navigation -->
+    <div class="tab-bar">
+      <button id="tab-mine" class="tab-btn active">MINE</button>
+      <button id="tab-global" class="tab-btn">GLOBAL</button>
+      <button id="tab-friends" class="tab-btn">FRIENDS</button>
+    </div>
+
+    <!-- Task Creation Panel (hides in FRIENDS view, or handled smartly in JS) -->
+    <div id="creation-box" class="action-box">
+      <input type="text" id="task-input" placeholder=">_ ENTER_TASK_TITLE" autocomplete="off" />
+      <button id="add-task-btn">ADD_TASK</button>
+    </div>
+
+    <!-- Dynamic Task Container -->
+    <div class="task-list-wrapper">
+      <div id="task-list" class="task-list">
+        <!-- Rendered dynamically by popup.js -->
+      </div>
+    </div>
+
+    <!-- Bottom Retro Logger Status Bar -->
+    <div id="status-bar" class="terminal-log">[SYS]: INITIALIZING_CONNECTION</div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

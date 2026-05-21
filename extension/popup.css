@@ -1,0 +1,338 @@
+/* Neo-Brutalist Retro-Terminal Stylesheet for Status Tracker */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
+}
+
+body {
+  width: 380px;
+  height: 550px;
+  background-color: #ffffff;
+  color: #000000;
+  overflow: hidden;
+  border: 4px solid #000000;
+}
+
+/* View Panels */
+.view-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  background-color: #ffffff;
+}
+
+/* Header Panel Box */
+.header-box {
+  border: 3px solid #000000;
+  padding: 12px;
+  margin-bottom: 14px;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 0px #000000;
+  transition: all 0.1s ease;
+}
+.header-box h1 {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.header-box .subtitle {
+  font-size: 11px;
+  font-style: italic;
+  text-decoration: underline;
+  margin-top: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Onboarding Content Styling */
+.content-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  border: 3px solid #000000;
+  padding: 20px;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 0px #000000;
+}
+.prompt-text {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 3px solid #000000;
+  background-color: #ffffff;
+  outline: none;
+  font-weight: bold;
+}
+.input-group input:focus {
+  background-color: #f7f7f7;
+  box-shadow: inset 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+/* Onboarding Access Button */
+#access-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
+  border: 3px solid #000000;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px #000000;
+  transition: all 0.1s ease;
+}
+#access-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+#access-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+/* Terminal Log System Footers */
+.terminal-log {
+  background-color: #000000;
+  color: #00ff66; /* Retro green terminal text */
+  font-size: 11px;
+  padding: 8px 12px;
+  border: 3px solid #000000;
+  word-break: break-all;
+  letter-spacing: 0.5px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+/* Tab Bar Styling */
+.tab-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.tab-btn {
+  flex: 1;
+  padding: 10px 4px;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
+  border: 3px solid #000000;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  text-transform: uppercase;
+}
+.tab-btn:hover {
+  background-color: #f0f0f0;
+}
+.tab-btn.active {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Task Creation Action Box */
+.action-box {
+  border: 3px solid #000000;
+  padding: 12px;
+  margin-bottom: 14px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#task-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  border: 3px solid #000000;
+  background-color: #ffffff;
+  outline: none;
+  font-weight: bold;
+}
+#task-input:focus {
+  background-color: #f7f7f7;
+}
+
+/* ADD TASK Button with Neo-Brutalist click effect */
+#add-task-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #000000;
+  border: 3px solid #000000;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  text-transform: uppercase;
+}
+#add-task-btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+#add-task-btn:active {
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(0.98);
+}
+
+/* Dynamic Task List Container */
+.task-list-wrapper {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  padding-right: 4px;
+}
+
+/* Monochromatic Retro Scrollbars */
+.task-list-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+.task-list-wrapper::-webkit-scrollbar-track {
+  background: #ffffff;
+  border: 2px solid #000000;
+}
+.task-list-wrapper::-webkit-scrollbar-thumb {
+  background: #000000;
+  border: 1px solid #ffffff;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Task Item Card Box */
+.task-item {
+  border: 3px solid #000000;
+  padding: 14px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 2px 2px 0px #000000;
+  transition: all 0.1s ease;
+}
+.task-item:hover {
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.task-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.task-title {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.3;
+  color: #000000;
+  word-break: break-word;
+}
+
+.task-creator {
+  font-size: 11px;
+  font-style: italic;
+  color: #555555;
+}
+
+/* Custom Checkbox Design matching standard checked checkbox */
+.checkbox-container {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* The custom check box element */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  transition: background-color 0.1s ease;
+}
+
+/* On hover checklist */
+.checkbox-container:hover input ~ .checkmark {
+  background-color: #f0f0f0;
+}
+
+/* When the checkbox is checked, add a vibrant electric blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #0066ff;
+  border-color: #0066ff;
+}
+
+/* Create the checkmark indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark indicator */
+.checkbox-container .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+/* Checked Task Styles (line-through and text muted) */
+.task-item.completed {
+  background-color: #fafafa;
+}
+.task-item.completed .task-title {
+  text-decoration: line-through;
+  color: #888888;
+}
+
+/* Empty placeholder styling for retro status tracker */
+.empty-task-log {
+  border: 3px dashed #000000;
+  padding: 24px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: #555555;
+  background-color: #fafafa;
+}
